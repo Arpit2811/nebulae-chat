@@ -29,6 +29,9 @@ All colors MUST be HSL.
     --accent: 25 95% 53%;
     --accent-foreground: 222 47% 11%;
 
+    --orange: 25 95% 53%;
+    --orange-muted: 25 90% 45%;
+    
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
@@ -38,10 +41,13 @@ All colors MUST be HSL.
 
     --radius: 1rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(222 47% 11%) 50%, hsl(25 95% 53%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(217 91% 60%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(217 33% 17% / 0.6), hsl(217 33% 14% / 0.4));
+    --gradient-hover: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(25 95% 58%) 100%);
     --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
-    --glow-accent: 0 0 40px hsl(25 95% 53% / 0.3);
+    --glow-accent: 0 0 40px hsl(25 95% 53% / 0.4);
+    --glow-mixed: 0 8px 32px hsl(25 95% 53% / 0.2), 0 4px 16px hsl(217 91% 60% / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;

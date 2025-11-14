@@ -5,22 +5,34 @@ import { useState } from "react";
 
 export const ChatInput = () => {
   const [message, setMessage] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   return (
     <div className="w-full max-w-4xl mx-auto px-6 pb-8">
-      <div className="relative bg-card/60 backdrop-blur-xl rounded-2xl border border-border/50 shadow-2xl">
+      <div className={`relative bg-card/60 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${
+        isFocused 
+          ? 'border-orange/50 shadow-[0_0_32px_rgba(249,115,22,0.2),0_0_16px_rgba(59,130,246,0.15)]' 
+          : 'border-border/50 shadow-2xl'
+      }`}>
+        {/* Gradient glow bar */}
+        <div className={`absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange to-transparent transition-opacity duration-300 ${
+          isFocused ? 'opacity-100' : 'opacity-0'
+        }`} />
+        
         <div className="flex items-center gap-2 p-4">
           <Button
             variant="ghost"
             size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+            className="text-muted-foreground hover:text-orange hover:bg-orange/10 transition-all duration-300 hover:scale-110 group"
           >
-            <Paperclip className="w-5 h-5" />
+            <Paperclip className="w-5 h-5 group-hover:rotate-12 transition-transform" />
           </Button>
           
           <Input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
             placeholder="Ask anything..."
             className="flex-1 border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 text-base"
           />
@@ -28,16 +40,18 @@ export const ChatInput = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all"
+            className="text-muted-foreground hover:text-orange hover:bg-orange/10 transition-all duration-300 hover:scale-110 group"
           >
-            <Mic className="w-5 h-5" />
+            <Mic className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </Button>
           
           <Button
             size="icon"
-            className="bg-gradient-to-br from-primary to-accent hover:opacity-90 text-white shadow-lg hover:shadow-primary/30 transition-all"
+            className="relative bg-gradient-to-br from-primary via-primary to-orange hover:from-primary/90 hover:via-orange/90 hover:to-orange text-white shadow-lg hover:shadow-[0_0_24px_rgba(249,115,22,0.4)] transition-all duration-300 hover:scale-110 group overflow-hidden"
           >
-            <Send className="w-5 h-5" />
+            {/* Animated shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+            <Send className="w-5 h-5 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Button>
         </div>
       </div>
