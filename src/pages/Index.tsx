@@ -1,12 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Sidebar } from "@/components/Sidebar";
+import { ChatInput } from "@/components/ChatInput";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="flex h-screen overflow-hidden bg-gradient-to-br from-background via-background to-card">
+      <Sidebar />
+      
+      <main className="flex-1 flex flex-col">
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="text-center space-y-6 animate-fade-in">
+            <h1 className="text-5xl font-light text-foreground tracking-tight">
+              What can I help with?
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-md mx-auto">
+              Start a conversation or choose from your recent chats
+            </p>
+          </div>
+        </div>
+        
+        <ChatInput />
+      </main>
     </div>
   );
 };
