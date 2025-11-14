@@ -1,7 +1,8 @@
-import { Plus, MessageSquare } from "lucide-react";
+import { Plus, MessageSquare, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import logo from "@/assets/logo.png";
+import { useState } from "react";
 
 const chatHistory = [
   "Color names and codes",
@@ -11,34 +12,54 @@ const chatHistory = [
 ];
 
 export const Sidebar = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <aside className="w-72 h-screen bg-card/40 backdrop-blur-xl border-r border-border/50 flex flex-col">
-      <div className="p-6 border-b border-border/50">
-        <div className="flex items-center gap-3 mb-6">
-          <img src={logo} alt="Logo" className="w-10 h-10" />
-          <h1 className="text-xl font-semibold text-foreground">AI Chat</h1>
+    <aside className="w-72 h-screen bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border-r border-orange/20 flex flex-col relative overflow-hidden">
+      {/* Animated orange glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange/5 via-transparent to-primary/5 pointer-events-none" />
+      
+      <div className="relative z-10 p-6 border-b border-border/50">
+        <div className="flex items-center gap-3 mb-6 group">
+          <div className="relative">
+            <img src={logo} alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300" />
+            <div className="absolute inset-0 bg-orange/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
+          <h1 className="text-xl font-semibold bg-gradient-to-r from-primary via-orange to-primary bg-clip-text text-transparent">
+            AI Chat
+          </h1>
+          <Sparkles className="w-4 h-4 text-orange ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
         <Button 
           variant="default" 
-          className="w-full justify-start gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/20 transition-all"
+          className="w-full justify-start gap-2 bg-gradient-to-r from-primary to-orange hover:from-primary/90 hover:to-orange/90 text-white shadow-lg hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all duration-300 hover:scale-[1.02] group"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform duration-300" />
           New chat
         </Button>
       </div>
 
-      <ScrollArea className="flex-1 px-4 py-6">
+      <ScrollArea className="flex-1 px-4 py-6 relative z-10">
         <div className="space-y-2">
-          <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 mb-3">
+          <h2 className="text-xs font-semibold text-orange/80 uppercase tracking-wider px-3 mb-3 flex items-center gap-2">
             Recent Chats
+            <div className="h-px flex-1 bg-gradient-to-r from-orange/20 to-transparent" />
           </h2>
           {chatHistory.map((chat, index) => (
             <button
               key={index}
-              className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-foreground/80 hover:bg-accent/10 hover:text-foreground transition-all group flex items-center gap-2"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-foreground/80 hover:text-foreground transition-all duration-300 group flex items-center gap-2 relative overflow-hidden hover:scale-[1.02]"
             >
-              <MessageSquare className="w-4 h-4 text-primary/60 group-hover:text-primary transition-colors" />
-              <span className="truncate">{chat}</span>
+              {/* Gradient background on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-r from-primary/10 to-orange/10 rounded-lg transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`} />
+              
+              {/* Orange accent bar */}
+              <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange to-primary transition-all duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`} />
+              
+              <MessageSquare className="w-4 h-4 text-primary/60 group-hover:text-orange transition-all duration-300 relative z-10 group-hover:scale-110" />
+              <span className="truncate relative z-10">{chat}</span>
             </button>
           ))}
         </div>
