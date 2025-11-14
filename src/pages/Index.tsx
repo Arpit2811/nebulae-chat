@@ -6,8 +6,9 @@ const Index = () => {
   return (
     <div className="flex h-screen overflow-hidden bg-gradient-to-br from-background via-card/20 to-background relative">
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-orange/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       
       <Sidebar />
       
@@ -15,20 +16,20 @@ const Index = () => {
         <div className="flex-1 flex items-center justify-center px-6">
           <div className="text-center space-y-8 animate-fade-in">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Sparkles className="w-8 h-8 text-orange animate-pulse" />
+              <Sparkles className="w-8 h-8 text-gold animate-pulse" />
               <Zap className="w-6 h-6 text-primary" />
               <MessageCircle className="w-7 h-7 text-orange/70 animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
             
             <h1 className="text-6xl font-light tracking-tight">
-              <span className="bg-gradient-to-r from-primary via-orange to-primary bg-clip-text text-transparent animate-fade-in">
+              <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent animate-fade-in">
                 What can I help with?
               </span>
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-md mx-auto">
               Start a conversation or choose from your{" "}
-              <span className="text-orange font-medium">recent chats</span>
+              <span className="bg-gradient-to-r from-gold to-orange bg-clip-text text-transparent font-medium">recent chats</span>
             </p>
 
             {/* Feature pills */}
@@ -36,7 +37,7 @@ const Index = () => {
               {['Creative', 'Analytical', 'Helpful'].map((trait, i) => (
                 <div
                   key={trait}
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-orange/10 border border-orange/20 text-sm text-foreground/80 hover:border-orange/40 hover:scale-105 transition-all duration-300 cursor-default"
+                  className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 via-gold/5 to-orange/10 border border-gold/30 text-sm text-foreground/80 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] hover:scale-105 transition-all duration-300 cursor-default"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 >
                   {trait}
