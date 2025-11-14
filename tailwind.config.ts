@@ -43,6 +43,10 @@ export default {
           DEFAULT: "hsl(var(--orange))",
           muted: "hsl(var(--orange-muted))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          muted: "hsl(var(--gold-muted))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
