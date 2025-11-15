@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const models = [
-  { id: "gpt-4", name: "GPT-4" },
-  { id: "gpt-3.5-turbo", name: "GPT-3.5 Turbo" },
-  { id: "claude-3", name: "Claude 3" },
-  { id: "gemini-pro", name: "Gemini Pro" },
+  { id: "param-1", name: "Param-1" },
+  { id: "ayurparam", name: "Ayurparam" },
+  { id: "financeparam", name: "FinanceParam" },
+  { id: "legalparam", name: "LegalParam" },
 ];
 
 export const ModelSelector = () => {
