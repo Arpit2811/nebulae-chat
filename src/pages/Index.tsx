@@ -21,8 +21,8 @@ const Index = () => {
           <div className="text-center space-y-8 animate-fade-in">
             <div className="flex items-center justify-center mb-8">
               <div className="relative">
-                <img src={logo} alt="Chat Logo" className="w-24 h-24 animate-pulse" />
-                <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-3xl rounded-full" />
+                <img src={logo} alt="Chat Logo" className="w-24 h-24 animate-spin" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-3xl rounded-full animate-pulse" />
               </div>
             </div>
             
