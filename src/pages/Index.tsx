@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/Sidebar";
 import { ChatInput } from "@/components/ChatInput";
-import { Sparkles, Zap, MessageCircle } from "lucide-react";
+import { ModelSelector } from "@/components/ModelSelector";
+import logo from "@/assets/chat-logo.png";
 
 const Index = () => {
   return (
@@ -13,12 +14,16 @@ const Index = () => {
       <Sidebar />
       
       <main className="flex-1 flex flex-col relative z-10">
+        <div className="p-6">
+          <ModelSelector />
+        </div>
         <div className="flex-1 flex items-center justify-center px-6">
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Sparkles className="w-8 h-8 text-gold animate-pulse" />
-              <Zap className="w-6 h-6 text-primary" />
-              <MessageCircle className="w-7 h-7 text-orange/70 animate-pulse" style={{ animationDelay: '0.5s' }} />
+            <div className="flex items-center justify-center mb-8">
+              <div className="relative">
+                <img src={logo} alt="Chat Logo" className="w-24 h-24 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-3xl rounded-full" />
+              </div>
             </div>
             
             <h1 className="text-6xl font-light tracking-tight">

@@ -1,4 +1,4 @@
-import { Send, Paperclip, Mic } from "lucide-react";
+import { Send, Paperclip } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -36,14 +36,6 @@ export const ChatInput = () => {
             placeholder="Ask anything..."
             className="flex-1 border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 text-base"
           />
-          
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-muted-foreground hover:text-orange hover:bg-orange/10 transition-all duration-300 hover:scale-110 group"
-          >
-            <Mic className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Button>
           
           <Button
             size="icon"

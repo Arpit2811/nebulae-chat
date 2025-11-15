@@ -1,7 +1,7 @@
 import { Plus, MessageSquare, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/chat-logo.png";
 import { useState } from "react";
 
 const chatHistory = [
@@ -23,11 +23,8 @@ export const Sidebar = () => {
         <div className="flex items-center gap-3 mb-6 group">
           <div className="relative">
             <img src={logo} alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-orange/40 via-gold/40 to-primary/30 blur-2xl rounded-full opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
           </div>
-          <h1 className="text-xl font-semibold bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
-            AI Chat
-          </h1>
           <Sparkles className="w-4 h-4 text-gold ml-auto opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
         </div>
         <Button 
