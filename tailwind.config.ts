@@ -98,11 +98,25 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "logo-load": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.3) rotate(-180deg)",
+          },
+          "50%": {
+            transform: "scale(1.1) rotate(0deg)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) rotate(0deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
+        "logo-load": "logo-load 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)",
       },
     },
   },
