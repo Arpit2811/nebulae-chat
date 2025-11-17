@@ -19,11 +19,11 @@ export const ModelSelector = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/60 backdrop-blur-xl border border-gold/30 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] transition-all duration-300 outline-none group">
-        <span className="text-sm font-medium bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
+      <DropdownMenuTrigger className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-card/60 backdrop-blur-xl border border-gold/30 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] transition-all duration-300 outline-none group shrink-0">
+        <span className="text-xs font-medium bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
           {selectedModel.name}
         </span>
-        <ChevronDown className="w-4 h-4 text-gold group-hover:translate-y-0.5 transition-transform" />
+        <ChevronDown className="w-3.5 h-3.5 text-gold group-hover:translate-y-0.5 transition-transform" />
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="start" 
