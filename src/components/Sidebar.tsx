@@ -1,8 +1,13 @@
-import { Plus, MessageSquare, Sparkles } from "lucide-react";
+import { Plus, MessageSquare, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import logo from "@/assets/chat-logo.png";
 import { useState } from "react";
+
+interface SidebarProps {
+  isOpen: boolean;
+  onToggle: () => void;
+}
 
 const chatHistory = [
   "Color names and codes",
@@ -11,16 +16,26 @@ const chatHistory = [
   "Yotta metadata range setup",
 ];
 
-export const Sidebar = () => {
+export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  if (!isOpen) return null;
+
   return (
-    <aside className="w-72 h-screen bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border-r border-orange/20 flex flex-col relative overflow-hidden">
+    <aside className="w-72 h-screen bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border-r border-orange/20 flex flex-col relative overflow-hidden transition-all duration-300">
       {/* Animated orange glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange/5 via-transparent to-primary/5 pointer-events-none" />
       
       <div className="relative z-10 p-6 border-b border-gold/20">
         <div className="flex items-center gap-3 mb-6 group">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onToggle}
+            className="absolute top-4 right-4 h-8 w-8 hover:bg-gold/10 hover:text-gold transition-all duration-300"
+          >
+            <X className="h-4 w-4" />
+          </Button>
           <div className="relative">
             <img src={logo} alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-orange/40 via-gold/40 to-primary/30 blur-2xl rounded-full opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
