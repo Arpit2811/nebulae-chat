@@ -14,41 +14,30 @@ const Index = () => {
       <Sidebar />
       
       <main className="flex-1 flex flex-col relative z-10">
-        <div className="p-6">
-          <ModelSelector />
-        </div>
-        <div className="flex-1 flex items-center justify-center px-6">
-          <div className="text-center space-y-8 animate-fade-in">
-            <div className="flex items-center justify-center mb-8">
+        <div className="flex-1 flex items-center justify-start px-6 pl-24">
+          <div className="space-y-8 animate-[slide-in-right_0.8s_ease-out_reverse]">
+            <div className="flex items-center gap-6 mb-8">
               <div className="relative">
-                <img src={logo} alt="Chat Logo" className="w-32 h-32 opacity-90" />
+                <img src={logo} alt="Chat Logo" className="w-24 h-24 opacity-90" />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-2xl rounded-full" />
+              </div>
+              
+              <div>
+                <h1 className="text-5xl font-bold tracking-tight mb-1">
+                  <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent animate-fade-in">
+                    BharatGen
+                  </span>
+                </h1>
+                <p className="text-lg text-muted-foreground italic">
+                  GenAI for Bharat, by Bharat
+                </p>
               </div>
             </div>
             
-            <h1 className="text-6xl font-light tracking-tight">
-              <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent animate-fade-in">
-                What can I help with?
-              </span>
-            </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-md mx-auto">
+            <p className="text-lg text-muted-foreground max-w-md">
               Start a conversation or choose from your{" "}
               <span className="bg-gradient-to-r from-gold to-orange bg-clip-text text-transparent font-medium">recent chats</span>
             </p>
-
-            {/* Feature pills */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-              {['Creative', 'Analytical', 'Helpful'].map((trait, i) => (
-                <div
-                  key={trait}
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 via-gold/5 to-orange/10 border border-gold/30 text-sm text-foreground/80 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] hover:scale-105 transition-all duration-300 cursor-default"
-                  style={{ animationDelay: `${i * 0.2}s` }}
-                >
-                  {trait}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         
