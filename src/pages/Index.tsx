@@ -17,14 +17,14 @@ const Index = () => {
         <div className="flex-1 flex items-center justify-center px-6">
           <div className="text-center space-y-6">
             {/* Animated logo that appears first, then slides */}
-            <div className="flex items-center justify-center gap-6 animate-[fade-in_0.6s_ease-out]">
-              <div className="relative animate-[slide-in-right_0.8s_ease-out_0.6s_reverse] opacity-0 [animation-fill-mode:forwards]">
-                <img src={logo} alt="Chat Logo" className="w-24 h-24 opacity-90" />
+            <div className="flex items-center justify-center gap-6">
+              <div className="relative animate-[fade-in_0.6s_ease-out,slide-in-right_0.8s_ease-out_0.6s_reverse] [animation-fill-mode:forwards]">
+                <img src={logo} alt="Chat Logo" className="w-24 h-24" />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-2xl rounded-full" />
               </div>
               
               {/* Text appears after logo slides */}
-              <div className="text-left opacity-0 animate-[fade-in_0.6s_ease-out_1.4s] [animation-fill-mode:forwards]">
+              <div className="text-left opacity-0 animate-[fade-in_0.6s_ease-out_1.2s] [animation-fill-mode:forwards]">
                 <h1 className="text-5xl font-bold tracking-tight mb-1">
                   <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
                     BharatGen
