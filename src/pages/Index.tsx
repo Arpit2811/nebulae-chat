@@ -14,17 +14,17 @@ const Index = () => {
       <Sidebar />
       
       <main className="flex-1 flex flex-col relative z-10">
-        <div className="flex-1 flex items-center justify-start px-6 pl-24">
-          <div className="space-y-8 animate-[slide-in-right_0.8s_ease-out_reverse]">
-            <div className="flex items-center gap-6 mb-8">
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="text-center space-y-6 animate-fade-in">
+            <div className="flex items-center justify-center gap-6">
               <div className="relative">
                 <img src={logo} alt="Chat Logo" className="w-24 h-24 opacity-90" />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange/30 via-gold/30 to-primary/20 blur-2xl rounded-full" />
               </div>
               
-              <div>
+              <div className="text-left">
                 <h1 className="text-5xl font-bold tracking-tight mb-1">
-                  <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent animate-fade-in">
+                  <span className="bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
                     BharatGen
                   </span>
                 </h1>
@@ -34,7 +34,7 @@ const Index = () => {
               </div>
             </div>
             
-            <p className="text-lg text-muted-foreground max-w-md">
+            <p className="text-lg text-muted-foreground">
               Start a conversation or choose from your{" "}
               <span className="bg-gradient-to-r from-gold to-orange bg-clip-text text-transparent font-medium">recent chats</span>
             </p>

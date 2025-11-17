@@ -1,4 +1,4 @@
-import { Send, Paperclip } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -44,14 +44,6 @@ export const ChatInput = () => {
         }`} />
         
         <div className="flex items-center gap-2 p-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-muted-foreground hover:text-gold hover:bg-gold/10 transition-all duration-300 hover:scale-110 group"
-          >
-            <Paperclip className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-          </Button>
-          
           <Input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
