@@ -4,35 +4,12 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ModelSelector } from "./ModelSelector";
 
-const prompts = [
-  { label: 'Creative', prompt: 'Help me brainstorm creative ideas for' },
-  { label: 'Analytical', prompt: 'Analyze and explain in detail' },
-  { label: 'Helpful', prompt: 'Assist me with' },
-];
-
 export const ChatInput = () => {
   const [message, setMessage] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
-  const handlePromptClick = (prompt: string) => {
-    setMessage(prompt + ' ');
-  };
-
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 pb-8 space-y-4">{/* Feature pills */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        {prompts.map((item, i) => (
-          <button
-            key={item.label}
-            onClick={() => handlePromptClick(item.prompt)}
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 via-gold/5 to-orange/10 border border-gold/30 text-sm text-foreground/80 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in"
-            style={{ animationDelay: `${i * 0.2}s` }}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
-      
+    <div className="w-full max-w-4xl mx-auto px-6 pb-8">
       <div className={`relative bg-card/60 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${
         isFocused 
           ? 'border-gold/50 shadow-[0_0_32px_rgba(234,179,8,0.2),0_0_16px_rgba(249,115,22,0.15),0_0_8px_rgba(59,130,246,0.1)]' 
