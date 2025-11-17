@@ -2,8 +2,13 @@ import { Sidebar } from "@/components/Sidebar";
 import { ChatInput } from "@/components/ChatInput";
 import { ModelSelector } from "@/components/ModelSelector";
 import logo from "@/assets/chat-logo.png";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
     <div className="flex h-screen overflow-hidden bg-gradient-to-br from-background via-card/20 to-background relative">
       {/* Animated gradient orbs */}
@@ -11,9 +16,20 @@ const Index = () => {
       <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-orange/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} onToggle={() => setIsSidebarOpen(!isSidebarOpen)} />
       
       <main className="flex-1 flex flex-col relative z-10">
+        {/* Toggle button when sidebar is closed */}
+        {!isSidebarOpen && (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsSidebarOpen(true)}
+            className="absolute top-4 left-4 z-20 bg-card/80 backdrop-blur-sm border-gold/30 hover:border-gold/50 hover:bg-card/90 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] transition-all duration-300"
+          >
+            <Menu className="h-5 w-5 text-gold" />
+          </Button>
+        )}
         <div className="flex-1 flex items-center justify-center px-6">
           <div className="text-center space-y-6">
             {/* Animated logo that appears first, then slides */}
