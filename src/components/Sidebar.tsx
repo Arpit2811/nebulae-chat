@@ -43,7 +43,7 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
           <h1 className="text-base font-semibold bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
             Param-1 2.9B
           </h1>
-          <Sparkles className="w-4 h-4 text-gold ml-auto opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
+          {/*<Sparkles className="w-4 h-4 text-gold ml-auto opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />*/}
         </div>
         <Button 
           variant="default" 
