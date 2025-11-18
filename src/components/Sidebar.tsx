@@ -1,4 +1,4 @@
-import { Plus, MessageSquare, Sparkles, X } from "lucide-react";
+import { Plus, MessageSquare, PanelLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import logo from "@/assets/chat-logo.png";
@@ -34,9 +34,12 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             onClick={onToggle}
             className={`h-8 w-8 hover:bg-gold/10 hover:text-gold transition-all duration-300 ${isOpen ? 'absolute top-4 right-4' : 'self-center'}`}
           >
-            <X className="h-4 w-4" />
+            <PanelLeft className="h-4 w-4" />
           </Button>
-          <div className="relative">
+          <div 
+            className="relative cursor-pointer" 
+            onClick={!isOpen ? onToggle : undefined}
+          >
             <img src={logo} alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-orange/40 via-gold/40 to-primary/30 blur-2xl rounded-full opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
           </div>
