@@ -19,10 +19,10 @@ const chatHistory = [
 export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  if (!isOpen) return null;
-
   return (
-    <aside className="w-72 h-screen bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border-r border-orange/20 flex flex-col relative overflow-hidden transition-all duration-300">
+    <aside className={`h-screen bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border-r border-orange/20 flex flex-col relative overflow-hidden transition-all duration-300 ease-in-out ${
+      isOpen ? 'w-72 translate-x-0' : 'w-0 -translate-x-full'
+    }`}>
       {/* Animated orange glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange/5 via-transparent to-primary/5 pointer-events-none" />
       

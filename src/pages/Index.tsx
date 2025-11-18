@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [message, setMessage] = useState("");
 
   return (
     <div className="flex h-screen overflow-hidden bg-gradient-to-br from-background via-card/20 to-background relative">
@@ -66,7 +67,7 @@ const Index = () => {
               ].map((item, i) => (
                 <button
                   key={item.label}
-                  onClick={() => console.log(item.prompt)}
+                  onClick={() => setMessage(item.prompt)}
                   className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 via-gold/5 to-orange/10 border border-gold/30 text-sm text-foreground/80 hover:border-gold/50 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {item.label}
@@ -76,7 +77,7 @@ const Index = () => {
           </div>
         </div>
         
-        <ChatInput />
+        <ChatInput message={message} setMessage={setMessage} />
       </main>
     </div>
   );
