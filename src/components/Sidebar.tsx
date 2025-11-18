@@ -28,14 +28,6 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
       
       <div className={`relative z-10 border-b border-gold/20 transition-all duration-300 ${isOpen ? 'p-6' : 'p-3'}`}>
         <div className={`flex items-center mb-6 group ${isOpen ? 'gap-3' : 'flex-col gap-4'}`}>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onToggle}
-            className={`h-8 w-8 hover:bg-gold/10 hover:text-gold transition-all duration-300 ${isOpen ? 'absolute top-4 right-4' : 'self-center'}`}
-          >
-            <PanelLeft className="h-4 w-4" />
-          </Button>
           <div 
             className="relative cursor-pointer" 
             onClick={!isOpen ? onToggle : undefined}
@@ -44,9 +36,19 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             <div className="absolute inset-0 bg-gradient-to-br from-orange/40 via-gold/40 to-primary/30 blur-2xl rounded-full opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
           </div>
           {isOpen && (
-            <h1 className="text-base font-semibold bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent">
-              Param-1 2.9B
-            </h1>
+            <>
+              <h1 className="text-base font-semibold bg-gradient-to-r from-primary via-gold to-orange bg-clip-text text-transparent flex-1">
+                Param-1 2.9B
+              </h1>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onToggle}
+                className="h-8 w-8 hover:bg-gold/10 hover:text-gold transition-all duration-300"
+              >
+                <PanelLeft className="h-4 w-4" />
+              </Button>
+            </>
           )}
         </div>
         <Button 
