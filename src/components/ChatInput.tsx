@@ -4,8 +4,12 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ModelSelector } from "./ModelSelector";
 
-export const ChatInput = () => {
-  const [message, setMessage] = useState("");
+interface ChatInputProps {
+  message: string;
+  setMessage: (message: string) => void;
+}
+
+export const ChatInput = ({ message, setMessage }: ChatInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
