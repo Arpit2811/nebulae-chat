@@ -20,17 +20,6 @@ const Index = () => {
       <Sidebar isOpen={isSidebarOpen} onToggle={() => setIsSidebarOpen(!isSidebarOpen)} />
       
       <main className="flex-1 flex flex-col relative z-10">
-        {/* Toggle button when sidebar is closed */}
-        {!isSidebarOpen && (
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => setIsSidebarOpen(true)}
-            className="absolute top-4 left-4 z-20 bg-card/80 backdrop-blur-sm border-gold/30 hover:border-gold/50 hover:bg-card/90 hover:shadow-[0_0_16px_rgba(234,179,8,0.2)] transition-all duration-300"
-          >
-            <Menu className="h-5 w-5 text-gold" />
-          </Button>
-        )}
         <div className="flex-1 flex items-center justify-center px-6">
           <div className="text-center space-y-6">
             {/* Animated logo that appears first, then slides */}
